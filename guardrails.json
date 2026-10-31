@@ -1,0 +1,8 @@
+{
+  "_aciklama": "Tutarlar hesabın para biriminin EN KÜÇÜK biriminde (kuruş/cent). 50000 = 500,00 TL. scripts/guardrail.py bu dosyayı okur.",
+  "max_daily_budget": 50000,
+  "max_lifetime_budget": 1000000,
+  "require_paused_on_create": true,
+  "block_activate": false,
+  "allowed_ad_account_ids": []
+}

@@ -1,0 +1,52 @@
+{
+  "enabledMcpjsonServers": ["meta-ads"],
+  "permissions": {
+    "allow": [
+      "mcp__meta-ads__ads_get_ad_accounts",
+      "mcp__meta-ads__ads_get_ad_entities",
+      "mcp__meta-ads__ads_get_pages_for_business",
+      "mcp__meta-ads__ads_get_dataset_details",
+      "mcp__meta-ads__ads_get_dataset_quality",
+      "mcp__meta-ads__ads_get_dataset_stats",
+      "mcp__meta-ads__ads_get_errors",
+      "mcp__meta-ads__ads_insights_advertiser_context",
+      "mcp__meta-ads__ads_insights_anomaly_signal",
+      "mcp__meta-ads__ads_insights_auction_ranking_benchmarks",
+      "mcp__meta-ads__ads_insights_industry_benchmark",
+      "mcp__meta-ads__ads_insights_performance_trend",
+      "mcp__meta-ads__ads_get_opportunity_score",
+      "mcp__meta-ads__ads_get_help_article",
+      "mcp__meta-ads__ads_catalog_get_catalogs",
+      "mcp__meta-ads__ads_catalog_get_details",
+      "mcp__meta-ads__ads_catalog_get_diagnostics",
+      "mcp__meta-ads__ads_catalog_get_feed_rules",
+      "mcp__meta-ads__ads_catalog_get_product_details",
+      "mcp__meta-ads__ads_catalog_get_product_feed_details",
+      "mcp__meta-ads__ads_catalog_get_product_set_products",
+      "mcp__meta-ads__ads_catalog_get_product_sets",
+      "mcp__meta-ads__ads_catalog_get_products",
+      "Write(reports/**)"
+    ],
+    "ask": [
+      "mcp__meta-ads__ads_create_campaign",
+      "mcp__meta-ads__ads_create_ad_set",
+      "mcp__meta-ads__ads_create_ad",
+      "mcp__meta-ads__ads_update_entity",
+      "mcp__meta-ads__ads_activate_entity",
+      "mcp__meta-ads__ads_catalog_create"
+    ]
+  },
+  "hooks": {
+    "PreToolUse": [
+      {
+        "matcher": "mcp__meta-ads__.*",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python \"$CLAUDE_PROJECT_DIR/scripts/guardrail.py\""
+          }
+        ]
+      }
+    ]
+  }
+}
