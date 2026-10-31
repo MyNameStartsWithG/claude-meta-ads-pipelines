@@ -30,7 +30,7 @@ Doğal dille de tetiklenir: *"Son 7 günün reklamlarını analiz et"*, *"bütç
 **Gerekenler:** Claude Code (veya Codex CLI), Python 3.9+, Meta Business hesabında reklam yönetme yetkisi.
 
 ```bash
-git clone https://github.com/<kullanici>/claude-meta-ads-pipelines.git
+git clone https://github.com/MyNameStartsWithG/claude-meta-ads-pipelines.git
 cd claude-meta-ads-pipelines
 ```
 
