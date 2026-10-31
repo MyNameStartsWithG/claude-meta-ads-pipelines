@@ -6,13 +6,19 @@ on:
 
 jobs:
   guardrail:
-    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [ubuntu-24.04, windows-latest]
+        python-version: ["3.9", "3.13"]
+    runs-on: ${{ matrix.os }}
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-python@v5
         with:
-          python-version: "3.12"
-      - run: python -m json.tool guardrails.json > /dev/null
-      - run: python -m json.tool .claude/settings.json > /dev/null
-      - run: python -m json.tool .mcp.json > /dev/null
-      - run: python -m unittest discover -s tests -v
+          python-version: ${{ matrix.python-version }}
+      - name: Validate JSON config
+        shell: bash
+        run: for f in guardrails.json .claude/settings.json .mcp.json; do python -m json.tool "$f" > /dev/null; done
+      - name: Run tests
+        run: python -m unittest discover -s tests -v

@@ -1,8 +1,9 @@
 {
-  "_aciklama": "Tutarlar hesabın para biriminin EN KÜÇÜK biriminde (kuruş/cent). 50000 = 500,00 TL. scripts/guardrail.py bu dosyayı okur.",
+  "_comment": "Budgets are in the account currency's minor unit (cents), as the Marketing API expects: 50000 = 500.00. Read by scripts/guardrail.py.",
   "max_daily_budget": 50000,
   "max_lifetime_budget": 1000000,
   "require_paused_on_create": true,
   "block_activate": false,
+  "block_delete": true,
   "allowed_ad_account_ids": []
 }

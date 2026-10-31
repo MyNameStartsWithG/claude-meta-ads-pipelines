@@ -1,4 +1,0 @@
-# Codex proje yapılandırması (projeyi "trusted" işaretlediğinde okunur).
-# İlk kullanımda: codex mcp login meta_ads
-[mcp_servers.meta_ads]
-url = "https://mcp.facebook.com/ads"
